@@ -6,13 +6,60 @@ h1, h2, h3, h4, h5, p, span, strike{
 	font-family: 'Montserrat', sans-serif;
 }
 
+.nav-pills .nav-link.active{
+    background-color: transparent;
+}
+
+.navbar{
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.nav-link {
+    color: black !important;
+    font-family: 'Montserrat', sans-serif !important;
+    transition: .5s;
+}
+
+.nav-link:hover {
+    transform: translateY(-5px);
+}
+
+.social-link-icon{
+    transition: .5s;
+}
+
+.social-link-icon:hover{
+    transform: translateY(-5px);
+}
+
+.profile-img{
+	display: inline-block;
+	border-radius: 8px;
+	width: 250px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: .5s;
+
+}
+.profile-img:hover{
+    transform: translateY(-10px);
+}
+
+.card {
+    transition: .5s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
 .content{
 	display: flex;
     -webkit-box-pack: center;
     justify-content: center;
     -webkit-box-align: center;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     min-height: 100vh;
     padding: 0px;
 }
@@ -29,24 +76,29 @@ section{
     -webkit-box-align: center;
     align-items: center;
     position: relative;
-    margin: 10px 0px 40px;
     width: 100%;
     white-space: nowrap;
+    margin: 10px 0px 40px 50%;
+    transform: translateX(-200%);
+	opacity: 0;
+	animation: slide-in-anim 1.5s ease-out forwards;
 }
 
-.inner{
-	display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 50px;
+@keyframes slide-in-anim {
+	20% {
+		opacity: 0;
+	}
+	60% {
+		transform: translateX(-45%);
+	}
+	75% {
+		transform: translateX(-52%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%);
+	}
 }
-
-.profile-img{
-	display: inline-block;
-	border-radius: 8px;
-	width: 250px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 
 h1{
 	font-size: 40px;
@@ -56,22 +108,9 @@ h1{
     display: none;
 }
 
-.nav-link {
-    color: black !important;
-    font-family: 'Montserrat', sans-serif !important;
-}
 
 button {
     font-family: 'Montserrat', sans-serif !important;
-}
-
-.nav-pills .nav-link.active{
-    background-color: transparent;
-}
-
-.navbar{
-    -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
 }
 
 .foot{
